@@ -4,15 +4,15 @@ import ColorsPalette from '../constants/ColorsPalette';
 
 interface CustomTextInputProps {
     placeholder: string;
-    onSubmit?: (username: string) => void;
+    textValue: string;
+    onChangeText: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const CustomTextInput: React.FC<CustomTextInputProps> = ({ placeholder, onSubmit, ...props }) => {
+const CustomTextInput: React.FC<CustomTextInputProps> = ({ placeholder, textValue, onChangeText, ...props }) => {
     const dimensions = useWindowDimensions();
     const styles = style(dimensions);
 
-    const [username, setUsername] = useState('');
-    const [isFocus, setIsFocused] = useState<boolean>(false);
+    const [isFocused, setIsFocused] = useState<boolean>(false);
 
     const customOnFocus = useCallback(() => {
         props?.onFocus;
@@ -25,16 +25,8 @@ const CustomTextInput: React.FC<CustomTextInputProps> = ({ placeholder, onSubmit
     }, [props]);
 
     return (
-        <View style={[styles.textInputContainer, isFocus && { borderColor: ColorsPalette.BLUE_ACCENT }]}>
-            <TextInput
-                style={styles.inputTextField}
-                placeholder={placeholder}
-                onChangeText={(text) => setUsername(text)}
-                value={username}
-                onSubmitEditing={() => onSubmit(username)}
-                onFocus={customOnFocus}
-                onBlur={customOnBlur}
-            />
+        <View style={[styles.textInputContainer, isFocused && { borderColor: ColorsPalette.BLUE_ACCENT }]}>
+            <TextInput style={styles.inputTextField} placeholder={placeholder} onChangeText={(text) => onChangeText(text)} value={textValue} onFocus={customOnFocus} onBlur={customOnBlur} />
         </View>
     );
 };
