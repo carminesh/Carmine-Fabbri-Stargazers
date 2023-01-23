@@ -1,15 +1,15 @@
 import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import ColorsPalette from '../constants/ColorsPalette';
-import CustomTextInput from '../components/TextInput';
-import SubmitButton from '../components/SubmitButton';
+import CustomTextInput from '../atoms/TextInput';
+import SubmitButton from '../atoms/SubmitButton';
 
 const InnerApp: React.FC = () => {
     return (
         <View style={styles.viewContianer}>
             <CustomTextInput placeholder={'Username'} />
             <CustomTextInput placeholder={'Repository'} />
-            <SubmitButton />
+            <SubmitButton isButtonDisabled={false} />
         </View>
     );
 };
