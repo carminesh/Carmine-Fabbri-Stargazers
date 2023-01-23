@@ -58,7 +58,7 @@ yarn-error.log
 # BUCK
 buck-out/
 \.buckd/
-*.keystore
+
 
 # fastlane
 #
@@ -90,3 +90,6 @@ web-build/
 /android/index.android.bundle
 /ios/main.jsbundle
 /ios/main.jsbundle.map
+
+
+
