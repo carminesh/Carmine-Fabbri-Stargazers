@@ -3,15 +3,15 @@ import React from 'react';
 import ColorsPalette from '../constants/ColorsPalette';
 
 interface SubmitButtonProps {
-    isButtonDisabled: boolean;
+    isButtonEnabled: boolean;
 }
 
-const SubmitButton: React.FC<SubmitButtonProps> = ({ isButtonDisabled }) => {
+const SubmitButton: React.FC<SubmitButtonProps> = ({ isButtonEnabled }) => {
     const dimensions = useWindowDimensions();
     const styles = style(dimensions);
 
     return (
-        <TouchableOpacity style={styles.buttonContainer} disabled={isButtonDisabled}>
+        <TouchableOpacity style={[styles.buttonContainer, isButtonEnabled && { opacity: 0.7 }]} disabled={isButtonEnabled}>
             <Text style={styles.buttonText}>Search</Text>
         </TouchableOpacity>
     );
