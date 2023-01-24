@@ -40,7 +40,7 @@ const style = (dimensions: ScaledSize) =>
             height: 45,
             backgroundColor: ColorsPalette.LIGHT_BACKGROUND,
             borderRadius: 5,
-            borderWidth: 1.5,
+            borderWidth: 1,
             borderColor: ColorsPalette.GRAY,
             justifyContent: 'center',
             alignItems: 'flex-start',
