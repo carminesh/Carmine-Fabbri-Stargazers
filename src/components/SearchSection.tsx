@@ -5,6 +5,8 @@ import CustomTextInput from '../atoms/TextInput';
 import SubmitButton from '../atoms/SubmitButton';
 import { Stargazer } from '../models/Stargazer';
 import { getStargazersList } from '../manager/SearchManager';
+import { SEARCH_ICON, USER_ICON } from '../assets/icons';
+import { REPO_ICON } from '../assets/icons/index';
 
 interface SearchSectionProps {
     setFetchedStargazers: React.Dispatch<React.SetStateAction<Stargazer[] | undefined>>;
@@ -44,9 +46,9 @@ const SearchSection: React.FC<SearchSectionProps> = ({ setFetchedStargazers, set
 
     return (
         <View style={styles.viewContianer}>
-            <CustomTextInput placeholder={'Username'} textValue={user} onChangeText={setUser} />
-            <CustomTextInput placeholder={'Repository'} textValue={repo} onChangeText={setRepo} />
-            <SubmitButton isButtonEnabled={isButtonEnabled} onPressCallback={fetchStargazers} />
+            <CustomTextInput icon={USER_ICON} placeholder={'Username'} textValue={user} onChangeText={setUser} />
+            <CustomTextInput icon={REPO_ICON} placeholder={'Repository'} textValue={repo} onChangeText={setRepo} />
+            <SubmitButton icon={SEARCH_ICON} isButtonEnabled={isButtonEnabled} onPressCallback={fetchStargazers} />
         </View>
     );
 };
