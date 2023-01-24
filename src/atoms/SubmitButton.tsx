@@ -4,7 +4,7 @@ import ColorsPalette from '../constants/ColorsPalette';
 
 interface SubmitButtonProps {
     isButtonEnabled: boolean;
-    onPressCallback: unknown;
+    onPressCallback: () => Promise<void>;
 }
 
 const SubmitButton: React.FC<SubmitButtonProps> = ({ isButtonEnabled, onPressCallback }) => {
@@ -12,7 +12,7 @@ const SubmitButton: React.FC<SubmitButtonProps> = ({ isButtonEnabled, onPressCal
     const styles = style(dimensions);
 
     return (
-        <TouchableOpacity style={[styles.buttonContainer, isButtonEnabled && { opacity: 0.7 }]} disabled={isButtonEnabled} onPress={() => onPressCallback}>
+        <TouchableOpacity style={[styles.buttonContainer, isButtonEnabled && { opacity: 0.7 }]} disabled={isButtonEnabled} onPress={() => onPressCallback()}>
             <Text style={styles.buttonText}>Search</Text>
         </TouchableOpacity>
     );
