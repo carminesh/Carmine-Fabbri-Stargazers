@@ -9,11 +9,12 @@ import { SEARCH_ICON, USER_ICON } from '../assets/icons';
 import { REPO_ICON } from '../assets/icons/index';
 
 interface SearchSectionProps {
+    setShowEplainer: React.Dispatch<React.SetStateAction<boolean>>;
     setFetchedStargazers: React.Dispatch<React.SetStateAction<Stargazer[] | undefined>>;
     setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const SearchSection: React.FC<SearchSectionProps> = ({ setFetchedStargazers, setIsLoading }) => {
+const SearchSection: React.FC<SearchSectionProps> = ({ setShowEplainer, setFetchedStargazers, setIsLoading }) => {
     const [user, setUser] = useState<string>('nandorojo');
     const [repo, setRepo] = useState<string>('moti');
 
@@ -24,6 +25,7 @@ const SearchSection: React.FC<SearchSectionProps> = ({ setFetchedStargazers, set
 
     const fetchStargazers = useCallback(async () => {
         setIsLoading(true);
+        setShowEplainer(false);
         try {
             let response = await getStargazersList(user, repo);
 
@@ -46,8 +48,8 @@ const SearchSection: React.FC<SearchSectionProps> = ({ setFetchedStargazers, set
 
     return (
         <View style={styles.viewContianer}>
-            <CustomTextInput icon={USER_ICON} placeholder={'Username'} textValue={user} onChangeText={setUser} />
-            <CustomTextInput icon={REPO_ICON} placeholder={'Repository'} textValue={repo} onChangeText={setRepo} />
+            <CustomTextInput icon={USER_ICON} placeholder={'Search username'} textValue={user} onChangeText={setUser} />
+            <CustomTextInput icon={REPO_ICON} placeholder={'Search repository'} textValue={repo} onChangeText={setRepo} />
             <SubmitButton icon={SEARCH_ICON} isButtonEnabled={isButtonEnabled} onPressCallback={fetchStargazers} />
         </View>
     );
