@@ -23,7 +23,7 @@ const UserCell: React.FC<UserCellProps> = ({ login, id, avatar_url }) => {
     );
 };
 
-export default UserCell;
+export default memo(UserCell);
 
 const style = (dimensions: ScaledSize) =>
     StyleSheet.create({
