@@ -1,18 +1,20 @@
-import { ScaledSize, StyleSheet, Text, TouchableOpacity, useWindowDimensions, View } from 'react-native';
+import { Image, ImageSourcePropType, ScaledSize, StyleSheet, Text, TouchableOpacity, useWindowDimensions, View } from 'react-native';
 import React from 'react';
 import ColorsPalette from '../constants/ColorsPalette';
 
 interface SubmitButtonProps {
+    icon?: ImageSourcePropType;
     isButtonEnabled: boolean;
     onPressCallback: () => Promise<void>;
 }
 
-const SubmitButton: React.FC<SubmitButtonProps> = ({ isButtonEnabled, onPressCallback }) => {
+const SubmitButton: React.FC<SubmitButtonProps> = ({ icon, isButtonEnabled, onPressCallback }) => {
     const dimensions = useWindowDimensions();
     const styles = style(dimensions);
 
     return (
         <TouchableOpacity style={[styles.buttonContainer, isButtonEnabled && { opacity: 0.7 }]} disabled={isButtonEnabled} onPress={() => onPressCallback()}>
+            {icon && <Image style={styles.icon} source={icon} resizeMode="contain" />}
             <Text style={styles.buttonText}>Search</Text>
         </TouchableOpacity>
     );
@@ -29,9 +31,16 @@ const style = (dimensions: ScaledSize) =>
             justifyContent: 'center',
             alignItems: 'center',
             borderRadius: 5,
+            flexDirection: 'row',
         },
         buttonText: {
             color: ColorsPalette.WHITE,
             fontWeight: 'bold',
+        },
+        icon: {
+            tintColor: ColorsPalette.WHITE,
+            marginRight: 10,
+            width: 15,
+            height: 15,
         },
     });
