@@ -14,10 +14,11 @@ const UserCell: React.FC<UserCellProps> = ({ login, id, avatar_url }) => {
 
     return (
         <View style={styles.cellContainer}>
-            <Image source={{ uri: avatar_url }} style={styles.avatar} />
+            <Image source={{ uri: avatar_url }} style={styles.avatar} resizeMode={'contain'} />
             <View style={styles.infosContainer}>
-                <Text style={styles.textHeader}>{login}</Text>
-                <Text>{login}</Text>
+                <Text>
+                    Username: <Text style={styles.textHeader}>{login}</Text>
+                </Text>
             </View>
         </View>
     );
@@ -45,8 +46,8 @@ const style = (dimensions: ScaledSize) =>
             paddingHorizontal: 14,
         },
         avatar: {
-            width: 40,
-            height: 40,
+            width: 44,
+            height: 44,
             borderRadius: 40,
         },
         textHeader: {
