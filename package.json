@@ -16,7 +16,8 @@
     "@shopify/flash-list": "^1.4.0",
     "axios": "^1.2.3",
     "react": "18.2.0",
-    "react-native": "0.71.1"
+    "react-native": "0.71.1",
+    "react-native-svg": "^13.7.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
