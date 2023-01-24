@@ -35,7 +35,7 @@ const style = (dimensions: ScaledSize) =>
         },
         buttonText: {
             color: ColorsPalette.WHITE,
-            fontWeight: 'bold',
+            fontWeight: '600',
         },
         icon: {
             tintColor: ColorsPalette.WHITE,
