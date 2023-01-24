@@ -62,11 +62,12 @@ const style = (dimensions: ScaledSize) =>
         },
         textHeader: {
             fontWeight: 'bold',
-            fontSize: 20,
+            fontSize: 26,
             color: ColorsPalette.BLACK_ACCENT,
         },
         textSubheader: {
             paddingTop: 6,
+            fontSize: 16,
             fontWeight: '400',
         },
     });
