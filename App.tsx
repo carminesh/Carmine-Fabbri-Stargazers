@@ -5,9 +5,13 @@ import InnerApp from './src/screens/InnerApp';
 
 function App(): JSX.Element {
     return (
-        <SafeAreaView style={styles.container}>
-            <InnerApp />
-        </SafeAreaView>
+        /* In that way, we can obtain different colors on Top and Bottom in SafeAreaView component */
+        <>
+            <SafeAreaView style={styles.container} />
+            <SafeAreaView style={styles.container}>
+                <InnerApp />
+            </SafeAreaView>
+        </>
     );
 }
 
