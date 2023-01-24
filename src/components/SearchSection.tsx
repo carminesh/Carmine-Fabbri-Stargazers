@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import React, { useCallback, useMemo, useState } from 'react';
 import ColorsPalette from '../constants/ColorsPalette';
 import CustomTextInput from '../atoms/TextInput';
