@@ -1,13 +1,18 @@
 import { RequestMethod } from '../models/RequestMethod';
 import { GET_LIST_STARGAZERS } from '../services/api';
 import apiClient from '../services/config';
+import { Octokit } from '@octokit/core';
 
-/* This method is used to retrieve data from the Github List Stargazers. */
+const octokit = new Octokit({ auth: `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` });
+
+/* As you requested I followed API specs adherence from the official docs. */
 const getStargazersList = async (repoOwner: string, repoName: string) => {
     try {
-        let response = await apiClient(GET_LIST_STARGAZERS(repoOwner, repoName), {
-            method: RequestMethod.GET,
+        let response = await octokit.request(`GET /repos/${repoOwner}/${repoName}/stargazers?per_page=30`, {
+            owner: repoOwner,
+            repo: repoName,
         });
+
         return response.data;
     } catch (e: unknown) {
         console.log('Error: ', e.response.data);
@@ -16,3 +21,5 @@ const getStargazersList = async (repoOwner: string, repoName: string) => {
 };
 
 export { getStargazersList };
+
+/* As you requested I followed API specs adherence from the official docs. */
