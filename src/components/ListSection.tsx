@@ -1,4 +1,4 @@
-import { ScaledSize, StyleSheet, useWindowDimensions, View } from 'react-native';
+import { ActivityIndicator, ScaledSize, StyleSheet, useWindowDimensions, View } from 'react-native';
 import React, { useCallback } from 'react';
 import ColorsPalette from '../constants/ColorsPalette';
 import { FlashList } from '@shopify/flash-list';
@@ -22,8 +22,12 @@ const ListSection: React.FC<ListSectionProps> = ({ data, isLoading }) => {
     );
 
     return (
-        <View style={styles.containerView}>
-            <FlashList data={data} keyExtractor={(item, index) => index.toString()} renderItem={({ item }) => renderItem(item)} estimatedItemSize={300} numColumns={1} />
+        <View style={[styles.containerView, isLoading && { justifyContent: 'center' }]}>
+            {isLoading ? (
+                <ActivityIndicator size="small" color={ColorsPalette.BLUE_ACCENT} />
+            ) : (
+                <FlashList data={data} keyExtractor={(item, index) => index.toString()} renderItem={({ item }) => renderItem(item)} estimatedItemSize={300} numColumns={1} />
+            )}
         </View>
     );
 };
