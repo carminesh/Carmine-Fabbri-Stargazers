@@ -3,14 +3,17 @@ import React, { useCallback, useMemo, useState } from 'react';
 import ColorsPalette from '../constants/ColorsPalette';
 import CustomTextInput from '../atoms/TextInput';
 import SubmitButton from '../atoms/SubmitButton';
-import { User, Stargazer } from '../models/Stargazer';
+import { Stargazer } from '../models/Stargazer';
 import { getStargazersList } from '../manager/SearchManager';
 
-const SearchSection: React.FC = () => {
+interface SearchSectionProps {
+    setFetchedStargazers: React.Dispatch<React.SetStateAction<Stargazer[] | undefined>>;
+    setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const SearchSection: React.FC<SearchSectionProps> = ({ setFetchedStargazers, setIsLoading }) => {
     const [user, setUser] = useState<string>('nandorojo');
     const [repo, setRepo] = useState<string>('moti');
-    const [fetchedStargazers, setfetchedStargazers] = useState<User[]>();
-    const [isLoading, setIsLoading] = useState(false);
 
     /* memoized value to manage the button 'disabled' property */
     const isButtonEnabled: boolean = useMemo(() => {
@@ -20,7 +23,6 @@ const SearchSection: React.FC = () => {
     const fetchStargazers = useCallback(async () => {
         setIsLoading(true);
         try {
-            console.log('search: ', user, repo);
             let response = await getStargazersList(user, repo);
 
             /* In this section, we correctly map the endpoint response */
@@ -31,7 +33,7 @@ const SearchSection: React.FC = () => {
                     avatar_url: item.avatar_url,
                 }));
 
-                setfetchedStargazers(mappedData);
+                setFetchedStargazers(mappedData);
             }
         } catch (e: unknown) {
             console.error('Error: ', e);
