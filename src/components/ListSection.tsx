@@ -6,6 +6,8 @@ import { FlashList } from '@shopify/flash-list';
 import { Stargazer } from '../models/Stargazer';
 import UserCell from '../atoms/UserCell';
 import { noResultIcon } from '../assets/svg/noResultIcon';
+import ExplanotarySection from './ExplanotarySection';
+import { noStargazersIcon } from '../assets/svg/noStargazersIcon';
 
 interface ListSectionProps {
     data: Stargazer[] | undefined;
@@ -17,16 +19,16 @@ const ListSection: React.FC<ListSectionProps> = ({ data, isLoading }) => {
     const styles = style(dimensions);
 
     const renderListSection = useMemo(() => {
-        if (data && data.length > 0) {
+        // Check if data is undefined
+        if (data === undefined) {
+            // If data is undefined, there was an error with the requested data so return the `ExplanotarySection` with error message
+            return <ExplanotarySection svgImage={noResultIcon()} textHeader={'No results found'} textSubheader={'Enter the new data correctly and try again'} />;
+        } else if (data && data.length > 0) {
+            // If data is truthy and has a length greater than 0, return the `FlashList
             return <FlashList data={data} keyExtractor={(item, index) => index.toString()} renderItem={({ item }) => renderItem(item)} estimatedItemSize={300} numColumns={1} />;
         } else {
-            return (
-                <View style={styles.svgContainer}>
-                    <SvgXml width={'45%'} height={'45%'} xml={noResultIcon()} />
-                    <Text style={styles.textHeader}>No results found</Text>
-                    <Text style={styles.textSubheader}>No one still liked this repository</Text>
-                </View>
-            );
+            // If data is truthy but has a length of 0 this mean that no one starred the submitted repo
+            return <ExplanotarySection svgImage={noStargazersIcon()} textHeader={'This repo is alone'} textSubheader={'No one still liked this repository'} />;
         }
     }, [data]);
 
