@@ -8,8 +8,6 @@ const getStargazersList = async (repoOwner: string, repoName: string) => {
             owner: repoOwner,
             repo: repoName,
         });
-
-        console.log(response.data);
         return response.data;
     } catch (error: any) {
         console.error('Error: ', error.response.data.message);
