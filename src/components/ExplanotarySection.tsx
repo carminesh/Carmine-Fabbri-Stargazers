@@ -4,12 +4,18 @@ import { SvgXml } from 'react-native-svg';
 import { searchStarredUsers } from '../assets/svg/searchStarredUsers';
 import ColorsPalette from '../constants/ColorsPalette';
 
-const ExplanotarySection = () => {
+interface ExplanotarySectionProps {
+    svgImage: string;
+    textHeader: string;
+    textSubheader: string;
+}
+
+const ExplanotarySection: React.FC<ExplanotarySectionProps> = ({ svgImage, textHeader, textSubheader }) => {
     return (
         <View style={styles.svgContainer}>
-            <SvgXml width={'45%'} height={'45%'} xml={searchStarredUsers()} />
-            <Text style={styles.textHeader}>Lets' have some Fun!</Text>
-            <Text style={styles.textSubheader}>View the list of Stargazers in a repository</Text>
+            <SvgXml width={'45%'} height={'45%'} xml={svgImage} />
+            <Text style={styles.textHeader}>{textHeader}</Text>
+            <Text style={styles.textSubheader}>{textSubheader}</Text>
         </View>
     );
 };
@@ -27,7 +33,7 @@ const styles = StyleSheet.create({
         paddingBottom: 24,
     },
     textHeader: {
-        paddingTop: 24,
+        paddingTop: 14,
         fontWeight: 'bold',
         fontSize: 26,
         color: ColorsPalette.BLACK_ACCENT,
