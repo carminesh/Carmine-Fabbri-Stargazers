@@ -52,7 +52,7 @@ This project follows a very simple structure:
   - `models`: Model folder to store all the TypeScripts data types
   - `screens`: This folder contain each screen of the application
   - `store`: This folder contains the store and all the slices folder
-  - `slices`: Folder used to store slices that are needed to manage the store
+    - `slices`: Folder used to store slices that are needed to manage the store
 
 # GitHub Authentication token
 
