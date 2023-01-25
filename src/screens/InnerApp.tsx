@@ -8,7 +8,6 @@ import ExplanotarySection from '../components/ExplanotarySection';
 import { searchStarredUsers } from '../assets/svg/searchStarredUsers';
 
 const InnerApp: React.FC = () => {
-    const [fetchedStargazers, setFetchedStargazers] = useState<Stargazer[] | undefined>();
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [showEplainer, setShowEplainer] = useState<boolean>(true);
 
@@ -18,13 +17,13 @@ const InnerApp: React.FC = () => {
         return showEplainer ? (
             <ExplanotarySection svgImage={searchStarredUsers()} textHeader={"Lets' have some Fun!"} textSubheader={'View the list of Stargazers in a repository'} />
         ) : (
-            <ListSection data={fetchedStargazers} isLoading={isLoading} />
+            <ListSection isLoading={isLoading} />
         );
-    }, [fetchedStargazers, isLoading, showEplainer]);
+    }, [isLoading, showEplainer]);
 
     return (
         <View style={styles.viewContianer}>
-            <SearchSection setFetchedStargazers={setFetchedStargazers} setIsLoading={setIsLoading} setShowEplainer={setShowEplainer} />
+            <SearchSection setIsLoading={setIsLoading} setShowEplainer={setShowEplainer} />
             {renderMainSection}
         </View>
     );
