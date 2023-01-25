@@ -36,8 +36,10 @@ const SearchSection: React.FC<SearchSectionProps> = ({ setShowEplainer, setFetch
                     id: item.id,
                     avatar_url: item.avatar_url,
                 }));
-
                 setFetchedStargazers(mappedData);
+            } else {
+                /* here we set undefined when the user or the repo does not exist */
+                setFetchedStargazers(response);
             }
         } catch (e: unknown) {
             console.error('Error: ', e);
