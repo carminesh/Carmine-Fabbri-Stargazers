@@ -1,11 +1,10 @@
-import { StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
 import React, { useMemo, useState } from 'react';
-import ColorsPalette from '../constants/ColorsPalette';
-import SearchSection from '../components/SearchSection';
-import ListSection from '../components/ListSection';
-import { Stargazer } from '../models/Stargazer';
-import ExplanotarySection from '../components/ExplanotarySection';
-import { searchStarredUsers } from '../assets/svg/searchStarredUsers';
+import SearchSection from '../../components/SearchSection/SearchSection';
+import ListSection from '../../components/ListSection/ListSection';
+import ExplanotarySection from '../../components/ExplanotarySection/ExplanotarySection';
+import { searchStarredUsers } from '../../assets/svg/searchStarredUsers';
+import { styles } from './InnerApp.style';
 
 const InnerApp: React.FC = () => {
     const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -31,13 +30,4 @@ const InnerApp: React.FC = () => {
 
 export default InnerApp;
 
-const styles = StyleSheet.create({
-    viewContianer: {
-        width: '100%',
-        height: '100%',
-        backgroundColor: ColorsPalette.LIGHT_BACKGROUND,
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-    },
-});
+

@@ -1,7 +1,7 @@
 import React from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
 import ColorsPalette from './src/constants/ColorsPalette';
-import InnerApp from './src/screens/InnerApp';
+import InnerApp from './src/screens/InnerApp/InnerApp';
 import { Provider } from 'react-redux';
 import store from './src/store/store';
 

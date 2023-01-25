@@ -1,15 +1,15 @@
-import { ActivityIndicator, ScaledSize, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
+import { ActivityIndicator, useWindowDimensions, View } from 'react-native';
 import React, { useCallback, useMemo } from 'react';
-import ColorsPalette from '../constants/ColorsPalette';
-import { SvgXml } from 'react-native-svg';
+import ColorsPalette from '../../constants/ColorsPalette';
 import { FlashList } from '@shopify/flash-list';
-import { Stargazer } from '../models/Stargazer';
-import UserCell from '../atoms/UserCell';
-import { noResultIcon } from '../assets/svg/noResultIcon';
-import ExplanotarySection from './ExplanotarySection';
-import { noStargazersIcon } from '../assets/svg/noStargazersIcon';
+import { Stargazer } from '../../models/Stargazer';
+import UserCell from '../../atoms/UserCell/UserCell';
+import { noResultIcon } from '../../assets/svg/noResultIcon';
+import ExplanotarySection from '../ExplanotarySection/ExplanotarySection';
+import { noStargazersIcon } from '../../assets/svg/noStargazersIcon';
 import { useSelector } from 'react-redux';
-import { getStargazers } from '../store/slices/StargazersSlice';
+import { getStargazers } from '../../store/slices/StargazersSlice';
+import { style } from './ListSection.style';
 
 interface ListSectionProps {
     isLoading: boolean;
@@ -48,30 +48,4 @@ const ListSection: React.FC<ListSectionProps> = ({ isLoading }) => {
 
 export default ListSection;
 
-const style = (dimensions: ScaledSize) =>
-    StyleSheet.create({
-        containerView: {
-            paddingVertical: 16,
-            flex: 1,
-            height: '100%',
-            width: '100%',
-            backgroundColor: ColorsPalette.WHITE90,
-        },
-        svgContainer: {
-            width: '100%',
-            height: '100%',
-            alignItems: 'center',
-            justifyContent: 'center',
-            paddingBottom: 24,
-        },
-        textHeader: {
-            fontWeight: 'bold',
-            fontSize: 26,
-            color: ColorsPalette.BLACK_ACCENT,
-        },
-        textSubheader: {
-            paddingTop: 6,
-            fontSize: 16,
-            fontWeight: '400',
-        },
-    });
+

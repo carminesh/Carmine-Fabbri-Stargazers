@@ -1,14 +1,14 @@
-import { StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
 import React, { useCallback, useMemo, useState } from 'react';
-import ColorsPalette from '../constants/ColorsPalette';
-import CustomTextInput from '../atoms/TextInput';
-import SubmitButton from '../atoms/SubmitButton';
-import { Stargazer } from '../models/Stargazer';
-import { getStargazersList } from '../manager/SearchManager';
-import { SEARCH_ICON, USER_ICON } from '../assets/icons';
-import { REPO_ICON } from '../assets/icons/index';
+import CustomTextInput from '../../atoms/TextInput/TextInput';
+import SubmitButton from '../../atoms/SubmitButton/SubmitButton';
+import { Stargazer } from '../../models/Stargazer';
+import { getStargazersList } from '../../manager/SearchManager';
+import { SEARCH_ICON, USER_ICON } from '../../assets/icons';
+import { REPO_ICON } from '../../assets/icons/index';
 import { useDispatch } from 'react-redux';
-import { setStargazers } from '../store/slices/StargazersSlice';
+import { setStargazers } from '../../store/slices/StargazersSlice';
+import { styles } from './SearchSection.list';
 
 interface SearchSectionProps {
     setShowEplainer: React.Dispatch<React.SetStateAction<boolean>>;
@@ -61,14 +61,3 @@ const SearchSection: React.FC<SearchSectionProps> = ({ setShowEplainer, setIsLoa
 
 export default SearchSection;
 
-const styles = StyleSheet.create({
-    viewContianer: {
-        paddingVertical: 16,
-        width: '100%',
-        height: 190,
-        backgroundColor: ColorsPalette.LIGHT_BACKGROUND,
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-    },
-});
