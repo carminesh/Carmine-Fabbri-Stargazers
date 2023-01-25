@@ -7,8 +7,8 @@ import store from './src/store/store';
 
 function App(): JSX.Element {
     return (
-        /* In that way, we can obtain different colors on Top and Bottom in SafeAreaView component */
         <Provider store={store}>
+            {/* In that way, we can obtain different colors on Top and Bottom in SafeAreaView component */}
             <SafeAreaView style={styles.container} />
             <SafeAreaView style={styles.container}>
                 <InnerApp />
