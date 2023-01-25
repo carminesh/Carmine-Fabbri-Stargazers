@@ -59,7 +59,7 @@ This project follows a very simple structure:
 - `/index.js`: This is the default entry point of the application.
 
 Note that each component present inside folders like: `atoms`, `components` and `screens`, has its own folder in a way to separate the style and the logic of it.
-This makes the component code much cleaner and it also allows (eventually) writing two different style files for Android and iOS if required.
+This makes the components code much cleaner and it also allows (eventually) writing two different style files for Android and iOS if required.
 
 # GitHub Authentication token
 
