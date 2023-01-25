@@ -9,8 +9,9 @@ npm-debug.*
 *.orig.*
 web-build/
 
-#env file
-env.json
+#env file with github key
+.env
+
 # macOS
 .DS_Store
 
