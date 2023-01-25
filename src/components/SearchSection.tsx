@@ -7,16 +7,18 @@ import { Stargazer } from '../models/Stargazer';
 import { getStargazersList } from '../manager/SearchManager';
 import { SEARCH_ICON, USER_ICON } from '../assets/icons';
 import { REPO_ICON } from '../assets/icons/index';
+import { useDispatch } from 'react-redux';
+import { setStargazers } from '../store/slices/StargazersSlice';
 
 interface SearchSectionProps {
     setShowEplainer: React.Dispatch<React.SetStateAction<boolean>>;
-    setFetchedStargazers: React.Dispatch<React.SetStateAction<Stargazer[] | undefined>>;
     setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const SearchSection: React.FC<SearchSectionProps> = ({ setShowEplainer, setFetchedStargazers, setIsLoading }) => {
+const SearchSection: React.FC<SearchSectionProps> = ({ setShowEplainer, setIsLoading }) => {
     const [user, setUser] = useState<string>('nandorojo');
     const [repo, setRepo] = useState<string>('moti');
+    const dispatch = useDispatch();
 
     /* memoized value to manage the button 'disabled' property */
     const isButtonEnabled: boolean = useMemo(() => {
@@ -36,10 +38,10 @@ const SearchSection: React.FC<SearchSectionProps> = ({ setShowEplainer, setFetch
                     id: item.id,
                     avatar_url: item.avatar_url,
                 }));
-                setFetchedStargazers(mappedData);
+                dispatch(setStargazers(mappedData));
             } else {
                 /* here we set undefined when the user or the repo does not exist */
-                setFetchedStargazers(response);
+                dispatch(setStargazers(response));
             }
         } catch (e: unknown) {
             console.error('Error: ', e);
