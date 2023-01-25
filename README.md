@@ -43,6 +43,7 @@ Please note that to avoid any issues when running it on your Android simulator, 
 This project follows a very simple structure:
 
 - `__tests__`: Folder to store all test files of the application
+
 - `src`: This folder is the main container of all the application
   - `assets`: Asset folder to store all images, vectors, etc
   - `atoms`: : Folder to store any reusable component (such as a generic button)
@@ -52,7 +53,9 @@ This project follows a very simple structure:
   - `models`: Model folder to store all the TypeScripts data types
   - `screens`: This folder contain each screen of the application
   - `store`: This folder contains the store and all the slices folder
-    - `slices`: Folder used to store slices that are needed to manage the store
+  - `slices`: Folder used to store slices that are needed to manage the store
+
+- `/index.js`: This is the default entry point of the application.
 
 # GitHub Authentication token
 
