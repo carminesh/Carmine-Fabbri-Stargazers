@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ExplanotarySection testing renders correctly 1`] = `
+<View
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": "#f2f2f7",
+      "flex": 1,
+      "height": "100%",
+      "justifyContent": "center",
+      "paddingBottom": 24,
+      "width": "100%",
+    }
+  }
+>
+  <RNSVGSvgView
+    bbHeight="45%"
+    bbWidth="45%"
+    focusable={false}
+    height="45%"
+    style={
+      [
+        {
+          "backgroundColor": "transparent",
+          "borderWidth": 0,
+        },
+        {
+          "flex": 0,
+          "height": "45%",
+          "width": "45%",
+        },
+      ]
+    }
+    testID="explanotary-section-svg"
+    width="45%"
+    xml="<svg>...</svg>"
+  >
+    <RNSVGGroup
+      fill={
+        {
+          "payload": 4278190080,
+          "type": 0,
+        }
+      }
+    >
+      ...
+    </RNSVGGroup>
+  </RNSVGSvgView>
+  <Text
+    style={
+      {
+        "color": "#333333",
+        "fontSize": 26,
+        "fontWeight": "bold",
+        "paddingTop": 14,
+      }
+    }
+    testID="Test Header"
+  >
+    Test Header
+  </Text>
+  <Text
+    style={
+      {
+        "fontSize": 16,
+        "fontWeight": "400",
+        "paddingTop": 6,
+      }
+    }
+    testID="Test Subheader"
+  >
+    Test Subheader
+  </Text>
+</View>
+`;

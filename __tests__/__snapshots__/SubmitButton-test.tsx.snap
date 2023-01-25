@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SubmitButton testing renders correctly 1`] = `
+<View
+  accessibilityState={
+    {
+      "busy": undefined,
+      "checked": undefined,
+      "disabled": true,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": "#2C68F7",
+      "borderRadius": 5,
+      "flexDirection": "row",
+      "height": 45,
+      "justifyContent": "center",
+      "opacity": 0.7,
+      "width": 718,
+    }
+  }
+  testID="submit-button"
+>
+  <Image
+    resizeMode="contain"
+    source={
+      {
+        "uri": "https://example.com/icon.png",
+      }
+    }
+    style={
+      {
+        "height": 15,
+        "marginRight": 10,
+        "tintColor": "#FFFFFF",
+        "width": 15,
+      }
+    }
+    testID="submit-button-icon"
+  />
+  <Text
+    style={
+      {
+        "color": "#FFFFFF",
+        "fontWeight": "600",
+      }
+    }
+  >
+    Search
+  </Text>
+</View>
+`;

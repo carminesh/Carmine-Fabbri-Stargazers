@@ -1,0 +1,198 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchSection renders correctly 1`] = `
+<View
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": "#FFFFFF",
+      "flexDirection": "column",
+      "height": 190,
+      "justifyContent": "space-between",
+      "paddingVertical": 16,
+      "width": "100%",
+    }
+  }
+>
+  <View
+    style={
+      [
+        {
+          "alignItems": "center",
+          "backgroundColor": "#FFFFFF",
+          "borderColor": "#a6a6a6",
+          "borderRadius": 5,
+          "borderWidth": 1,
+          "flexDirection": "row",
+          "height": 45,
+          "justifyContent": "center",
+          "paddingHorizontal": 20,
+          "width": 718,
+        },
+        false,
+      ]
+    }
+    testID="text-input-container"
+  >
+    <Image
+      resizeMode="contain"
+      source={
+        {
+          "testUri": "../../../src/assets/icons/userIcon.png",
+        }
+      }
+      style={
+        [
+          {
+            "height": 15,
+            "marginRight": 10,
+            "tintColor": "#a6a6a6",
+            "width": 15,
+          },
+          false,
+        ]
+      }
+      testID="custom-text-input-icon"
+    />
+    <TextInput
+      onBlur={[Function]}
+      onChangeText={[Function]}
+      onFocus={[Function]}
+      placeholder="Search username"
+      style={
+        {
+          "height": "70%",
+          "width": "100%",
+        }
+      }
+      testID="user-input"
+      value="nandorojo"
+    />
+  </View>
+  <View
+    style={
+      [
+        {
+          "alignItems": "center",
+          "backgroundColor": "#FFFFFF",
+          "borderColor": "#a6a6a6",
+          "borderRadius": 5,
+          "borderWidth": 1,
+          "flexDirection": "row",
+          "height": 45,
+          "justifyContent": "center",
+          "paddingHorizontal": 20,
+          "width": 718,
+        },
+        false,
+      ]
+    }
+    testID="text-input-container"
+  >
+    <Image
+      resizeMode="contain"
+      source={
+        {
+          "testUri": "../../../src/assets/icons/repoIcon.png",
+        }
+      }
+      style={
+        [
+          {
+            "height": 15,
+            "marginRight": 10,
+            "tintColor": "#a6a6a6",
+            "width": 15,
+          },
+          false,
+        ]
+      }
+      testID="custom-text-input-icon"
+    />
+    <TextInput
+      onBlur={[Function]}
+      onChangeText={[Function]}
+      onFocus={[Function]}
+      placeholder="Search repository"
+      style={
+        {
+          "height": "70%",
+          "width": "100%",
+        }
+      }
+      testID="repo-input"
+      value="moti"
+    />
+  </View>
+  <View
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": false,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      {
+        "alignItems": "center",
+        "backgroundColor": "#2C68F7",
+        "borderRadius": 5,
+        "flexDirection": "row",
+        "height": 45,
+        "justifyContent": "center",
+        "opacity": 1,
+        "width": 718,
+      }
+    }
+    testID="submit-button"
+  >
+    <Image
+      resizeMode="contain"
+      source={
+        {
+          "testUri": "../../../src/assets/icons/searchIcon.png",
+        }
+      }
+      style={
+        {
+          "height": 15,
+          "marginRight": 10,
+          "tintColor": "#FFFFFF",
+          "width": 15,
+        }
+      }
+      testID="submit-button-icon"
+    />
+    <Text
+      style={
+        {
+          "color": "#FFFFFF",
+          "fontWeight": "600",
+        }
+      }
+    >
+      Search
+    </Text>
+  </View>
+</View>
+`;

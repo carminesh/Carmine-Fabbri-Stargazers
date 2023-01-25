@@ -12,13 +12,15 @@ interface ExplanotarySectionProps {
 const ExplanotarySection: React.FC<ExplanotarySectionProps> = ({ svgImage, textHeader, textSubheader }) => {
     return (
         <View style={styles.svgContainer}>
-            <SvgXml width={'45%'} height={'45%'} xml={svgImage} />
-            <Text style={styles.textHeader}>{textHeader}</Text>
-            <Text style={styles.textSubheader}>{textSubheader}</Text>
+            <SvgXml testID="explanotary-section-svg" width={'45%'} height={'45%'} xml={svgImage} />
+            <Text testID="Test Header" style={styles.textHeader}>
+                {textHeader}
+            </Text>
+            <Text testID="Test Subheader" style={styles.textSubheader}>
+                {textSubheader}
+            </Text>
         </View>
     );
 };
 
 export default memo(ExplanotarySection);
-
-

@@ -1,6 +1,6 @@
 import { View } from 'react-native';
 import React, { useCallback, useMemo, useState } from 'react';
-import CustomTextInput from '../../atoms/TextInput/TextInput';
+import CustomTextInput from '../../atoms/CustomTextInput/CustomTextInput';
 import SubmitButton from '../../atoms/SubmitButton/SubmitButton';
 import { Stargazer } from '../../models/Stargazer';
 import { getStargazersList } from '../../manager/SearchManager';
@@ -52,12 +52,11 @@ const SearchSection: React.FC<SearchSectionProps> = ({ setShowEplainer, setIsLoa
 
     return (
         <View style={styles.viewContianer}>
-            <CustomTextInput icon={USER_ICON} placeholder={'Search username'} textValue={user} onChangeText={setUser} />
-            <CustomTextInput icon={REPO_ICON} placeholder={'Search repository'} textValue={repo} onChangeText={setRepo} />
-            <SubmitButton icon={SEARCH_ICON} isButtonEnabled={isButtonEnabled} onPressCallback={fetchStargazers} />
+            <CustomTextInput testID="user-input" icon={USER_ICON} placeholder={'Search username'} textValue={user} onChangeText={setUser} />
+            <CustomTextInput testID="repo-input" icon={REPO_ICON} placeholder={'Search repository'} textValue={repo} onChangeText={setRepo} />
+            <SubmitButton testID="submit-button" icon={SEARCH_ICON} isButtonEnabled={isButtonEnabled} onPressCallback={fetchStargazers} />
         </View>
     );
 };
 
 export default SearchSection;
-

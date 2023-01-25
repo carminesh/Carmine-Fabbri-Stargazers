@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserCell testing renders correctly 1`] = `
+<View
+  style={
+    {
+      "alignItems": "center",
+      "alignSelf": "center",
+      "backgroundColor": "#FFFFFF",
+      "borderRadius": 5,
+      "flexDirection": "row",
+      "height": 76,
+      "marginBottom": 10,
+      "paddingHorizontal": 18,
+      "paddingVertical": 10,
+      "width": 718,
+    }
+  }
+>
+  <Image
+    resizeMode="contain"
+    source={
+      {
+        "uri": "https://example.com/avatar.png",
+      }
+    }
+    style={
+      {
+        "borderRadius": 40,
+        "height": 44,
+        "width": 44,
+      }
+    }
+    testID="user-cell-avatar"
+  />
+  <View
+    style={
+      {
+        "alignItems": "center",
+        "paddingHorizontal": 14,
+        "paddingVertical": 10,
+      }
+    }
+  >
+    <Text>
+      Username: 
+      <Text
+        style={
+          {
+            "color": "#2C68F7",
+            "fontSize": 16,
+            "fontWeight": "normal",
+          }
+        }
+      >
+        johndoe
+      </Text>
+    </Text>
+  </View>
+</View>
+`;

@@ -14,7 +14,7 @@ const UserCell: React.FC<UserCellProps> = ({ login, id, avatar_url }) => {
 
     return (
         <View style={styles.cellContainer}>
-            <Image source={{ uri: avatar_url }} style={styles.avatar} resizeMode={'contain'} />
+            <Image testID="user-cell-avatar" source={{ uri: avatar_url }} style={styles.avatar} resizeMode={'contain'} />
             <View style={styles.infosContainer}>
                 <Text>
                     Username: <Text style={styles.textHeader}>{login}</Text>
@@ -25,6 +25,3 @@ const UserCell: React.FC<UserCellProps> = ({ login, id, avatar_url }) => {
 };
 
 export default memo(UserCell);
-
-
-
