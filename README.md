@@ -49,13 +49,17 @@ This project follows a very simple structure:
   - `atoms`: : Folder to store any reusable component (such as a generic button)
   - `components`: This folder contains bigger components that are made from smaller ones, like the component from the folder _/atoms_
   - `constants`: Folder to store any kind of constant that is used inside the project
-  - `manager`: This folder contains all of the managers that are used to interact with the API
+  - `manager`: This folder contains all the managers that are used to interact with a specific API
   - `models`: Model folder to store all the TypeScripts data types
   - `screens`: This folder contain each screen of the application
   - `store`: This folder contains the store and all the slices folder
+  - `services`: Folder containing services that interact with external APIs; specifically, the Octokit authentication token is managed here
   - `slices`: Folder used to store slices that are needed to manage the store
 
 - `/index.js`: This is the default entry point of the application.
+
+Note that each component present inside folders like: `atoms`, `components` and `screens`, has its own folder in a way to separate the style and the logic of it.
+This makes the component code much cleaner and it also allows (eventually) writing two different style files for Android and iOS if required.
 
 # GitHub Authentication token
 
