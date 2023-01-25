@@ -5,16 +5,21 @@ import SearchSection from '../components/SearchSection';
 import ListSection from '../components/ListSection';
 import { Stargazer } from '../models/Stargazer';
 import ExplanotarySection from '../components/ExplanotarySection';
+import { searchStarredUsers } from '../assets/svg/searchStarredUsers';
 
 const InnerApp: React.FC = () => {
-    const [fetchedStargazers, setFetchedStargazers] = useState<Stargazer[]>();
+    const [fetchedStargazers, setFetchedStargazers] = useState<Stargazer[] | undefined>();
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [showEplainer, setShowEplainer] = useState<boolean>(true);
 
     /* This method allows the explanotary section to be rendered only the first time the user opens the app.
         When there are no result, the ListSection will show a different image */
     const renderMainSection = useMemo(() => {
-        return showEplainer ? <ExplanotarySection /> : <ListSection data={fetchedStargazers} isLoading={isLoading} />;
+        return showEplainer ? (
+            <ExplanotarySection svgImage={searchStarredUsers()} textHeader={"Lets' have some Fun!"} textSubheader={'View the list of Stargazers in a repository'} />
+        ) : (
+            <ListSection data={fetchedStargazers} isLoading={isLoading} />
+        );
     }, [fetchedStargazers, isLoading, showEplainer]);
 
     return (
