@@ -14,9 +14,9 @@ const InnerApp: React.FC = () => {
         When there are no result, the ListSection will show a different image */
     const renderMainSection = useMemo(() => {
         return showEplainer ? (
-            <ExplanotarySection svgImage={searchStarredUsers()} textHeader={"Lets' have some Fun!"} textSubheader={'View the list of Stargazers in a repository'} />
+            <ExplanotarySection testID="explanotary-section" svgImage={searchStarredUsers()} textHeader={"Lets' have some Fun!"} textSubheader={'View the list of Stargazers in a repository'} />
         ) : (
-            <ListSection isLoading={isLoading} />
+            <ListSection testID="list-section" isLoading={isLoading} />
         );
     }, [isLoading, showEplainer]);
 
@@ -29,5 +29,3 @@ const InnerApp: React.FC = () => {
 };
 
 export default InnerApp;
-
-

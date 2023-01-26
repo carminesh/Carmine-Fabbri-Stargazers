@@ -13,6 +13,7 @@ exports[`ExplanotarySection testing renders correctly 1`] = `
       "width": "100%",
     }
   }
+  testID="explanotary-section"
 >
   <RNSVGSvgView
     bbHeight="45%"

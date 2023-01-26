@@ -12,10 +12,11 @@ import { getStargazers } from '../../store/slices/StargazersSlice';
 import { style } from './ListSection.style';
 
 interface ListSectionProps {
+    testID?: string;
     isLoading: boolean;
 }
 
-const ListSection: React.FC<ListSectionProps> = ({ isLoading }) => {
+const ListSection: React.FC<ListSectionProps> = ({ testID, isLoading }) => {
     const dimensions = useWindowDimensions();
     const styles = style(dimensions);
     const fetchedStargazers: Stargazer[] | undefined = useSelector(getStargazers);
@@ -42,10 +43,10 @@ const ListSection: React.FC<ListSectionProps> = ({ isLoading }) => {
     );
 
     return (
-        <View style={[styles.containerView, isLoading && { justifyContent: 'center' }]}>{isLoading ? <ActivityIndicator size="small" color={ColorsPalette.BLUE_ACCENT} /> : renderListSection}</View>
+        <View testID={testID ? testID : 'list-section'} style={[styles.containerView, isLoading && { justifyContent: 'center' }]}>
+            {isLoading ? <ActivityIndicator size="small" color={ColorsPalette.BLUE_ACCENT} /> : renderListSection}
+        </View>
     );
 };
 
 export default ListSection;
-
-
