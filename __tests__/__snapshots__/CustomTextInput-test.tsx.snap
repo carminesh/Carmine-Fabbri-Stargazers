@@ -28,7 +28,7 @@ exports[`CustomTextInput testing renders correctly 1`] = `
     placeholder="Search"
     style={
       {
-        "height": "70%",
+        "height": "95%",
         "width": "100%",
       }
     }

@@ -61,7 +61,7 @@ exports[`SearchSection renders correctly 1`] = `
       placeholder="Search username"
       style={
         {
-          "height": "70%",
+          "height": "95%",
           "width": "100%",
         }
       }
@@ -116,7 +116,7 @@ exports[`SearchSection renders correctly 1`] = `
       placeholder="Search repository"
       style={
         {
-          "height": "70%",
+          "height": "95%",
           "width": "100%",
         }
       }
