@@ -3,9 +3,9 @@
 This project contains the source code for a simple mobile app that uses the React Native framework.
 The application allows (through the use of the GitHub API) the user to type the owner and name of the repository and shows a list of the users who have added it to their favorites.
 
-[<img src="./screenshots/home.png" width="150"/>](./screenshots/home.png)
-
-[<img src="./screenshots/search.png" width="150"/>](./screenshots/search.png)
+| Home example                                                              | Search example                                                                |
+| ------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| [<img src="./screenshots/home.png" width="150"/>](./screenshots/home.png) | [<img src="./screenshots/search.png" width="150"/>](./screenshots/search.png) |
 
 ## Installation
 
