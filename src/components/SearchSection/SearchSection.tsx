@@ -16,8 +16,8 @@ interface SearchSectionProps {
 }
 
 const SearchSection: React.FC<SearchSectionProps> = ({ setShowEplainer, setIsLoading }) => {
-    const [user, setUser] = useState<string>('nandorojo');
-    const [repo, setRepo] = useState<string>('moti');
+    const [user, setUser] = useState<string>('');
+    const [repo, setRepo] = useState<string>('');
     const dispatch = useDispatch();
 
     /* memoized value to manage the button 'disabled' property */
