@@ -21,7 +21,7 @@ const SearchSection: React.FC<SearchSectionProps> = ({ setShowEplainer, setIsLoa
     const dispatch = useDispatch();
 
     /* memoized value to manage the button 'disabled' property */
-    const isButtonEnabled: boolean = useMemo(() => {
+    const isButtonDisabled: boolean = useMemo(() => {
         return user.length > 0 && repo.length > 0 ? false : true;
     }, [user, repo]);
 
@@ -54,7 +54,7 @@ const SearchSection: React.FC<SearchSectionProps> = ({ setShowEplainer, setIsLoa
         <View style={styles.viewContianer}>
             <CustomTextInput testID="user-input" icon={USER_ICON} placeholder={'Search username'} textValue={user} onChangeText={setUser} />
             <CustomTextInput testID="repo-input" icon={REPO_ICON} placeholder={'Search repository'} textValue={repo} onChangeText={setRepo} />
-            <SubmitButton testID="submit-button" icon={SEARCH_ICON} isButtonEnabled={isButtonEnabled} onPressCallback={fetchStargazers} />
+            <SubmitButton testID="submit-button" icon={SEARCH_ICON} isButtonDisabled={isButtonDisabled} onPressCallback={fetchStargazers} />
         </View>
     );
 };

@@ -22,8 +22,7 @@ export const style = (dimensions: ScaledSize) =>
             height: 15,
         },
         inputTextField: {
-            paddingVertical: 2,
             width: '100%',
-            height: '70%',
+            height: '95%',
         },
     });
