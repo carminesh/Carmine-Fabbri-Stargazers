@@ -46,7 +46,7 @@ Please note that to avoid any issues when running it on your Android simulator, 
 
 This project follows a very simple structure:
 
--   `__tests__`: Folder to store all test files of the application
+-   `__tests__`: Folder to store test files of the application
 
 -   `src`: This folder is the main container of all the application
 
@@ -70,7 +70,7 @@ This makes the components code much cleaner and it also allows (eventually) writ
 
 For the use of specific GitHub APIs, as we can determine from the documentation, an authentication token must be used.
 
-As far as using the "Stargazers API" is concerned, no token is required.
+As far as using the "Stargazers endpoint" is concerned, no token is required.
 Nonetheless, I have set up an .env (added inside the .gitignore file and located within the project root) that contains personal authentication tokens.
 So, in order to go and use your own token, it is necessary:
 
@@ -82,6 +82,17 @@ GIT_HUB_ACCESS_TOKEN = foefhniw13malafoe;
 ```
 
 After performing the above steps, using `octokit` you will already possess the authentication token needed to make the authorized calls.
+
+# Tests
+
+More than 20 tests were written and verified using _Jest_, _@testing-library/jest-native_ and _@testing-library/react-native_.
+For the tests of the Redux store implementation, were used libraries like _redux-mock-store_
+
+To run the test and update all components snapshot, use the following command:
+
+```bash
+yarn test -u
+```
 
 # Redux and state managment
 
