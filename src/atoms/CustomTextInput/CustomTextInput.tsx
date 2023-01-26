@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import { Image, ImageSourcePropType, TextInput, useWindowDimensions, View } from 'react-native';
 import ColorsPalette from '../../constants/ColorsPalette';
-import { style } from './CustomTextInput.style';
+import { style } from './CustomTextInput.style.ios';
 
 interface CustomTextInputProps {
     testID?: string;
