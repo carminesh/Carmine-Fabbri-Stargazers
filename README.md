@@ -66,6 +66,8 @@ This project follows a very simple structure:
 Note that each component present inside folders like: `atoms`, `components` and `screens`, has its own folder in a way to separate the style and the logic of it.
 This makes the components code much cleaner and it also allows (eventually) writing two different style files for Android and iOS if required.
 
+
+
 # GitHub Authentication token
 
 For the use of specific GitHub APIs, as we can determine from the documentation, an authentication token must be used.
@@ -85,7 +87,7 @@ After performing the above steps, using `octokit` you will already possess the a
 
 # Tests
 
-More than 20 tests were written and verified using _Jest_, _@testing-library/jest-native_ and _@testing-library/react-native_.
+Tests were written and verified using _Jest_, _@testing-library/jest-native_ and _@testing-library/react-native_.
 For the tests of the Redux store implementation, were used libraries like _redux-mock-store_
 
 To run the test and update all components snapshot, use the following command:
@@ -98,3 +100,16 @@ yarn test -u
 
 The flow of data within the application was managed through the use of the `React Redux` library and `Redux Toolkit`.
 This provided greater efficiency and simplicity in data management while avoiding the phenomenon of _props drilling_ and allowing the application to scale more easily
+
+# Some of base dependencies
+
+-   `@octokit/core": "^4.2.0"`
+-   `@reduxjs/toolkit": "^1.9.1"`
+-   `@shopify/flash-list": "^1.4.0"`
+-   `axios: "^1.2.3"`
+-   `"jest": "^29.2.1"`
+-   `"react-native-config": "^1.5.0"`
+-   `"react-native-svg": "^13.7.0"`
+-   `"react-redux": "^8.0.5"`
+-   `"redux-mock-store": "^1.5.4"`
+-   `"ts-node": "^10.9.1"`
