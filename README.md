@@ -48,10 +48,10 @@ This project follows a very simple structure:
 
 -   `__tests__`: Folder to store test files of the application
 
--   `src`: This folder is the main container of all the application
+-   `src`: This folder is the main container of entire project
 
     -   `assets`: Asset folder to store all images, vectors, etc
-    -   `atoms`: : Folder to store any reusable component (such as a generic button)
+    -   `atoms`: Folder to store any reusable component (such as a generic button)
     -   `components`: This folder contains bigger components that are made from smaller ones, like the component from the folder _/atoms_
     -   `constants`: Folder to store any kind of constant that is used inside the project
     -   `manager`: This folder contains all the managers that are used to interact with a specific API
