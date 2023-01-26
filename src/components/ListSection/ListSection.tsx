@@ -5,7 +5,7 @@ import { FlashList } from '@shopify/flash-list';
 import { Stargazer } from '../../models/Stargazer';
 import UserCell from '../../atoms/UserCell/UserCell';
 import { noResultIcon } from '../../assets/svg/noResultIcon';
-import ExplanotarySection from '../ExplanotarySection/ExplanotarySection';
+import ExplanotarySection from '../../atoms/ExplanotarySection/ExplanotarySection';
 import { noStargazersIcon } from '../../assets/svg/noStargazersIcon';
 import { useSelector } from 'react-redux';
 import { getStargazers } from '../../store/slices/StargazersSlice';

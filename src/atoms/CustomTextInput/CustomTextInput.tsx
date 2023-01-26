@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useState } from 'react';
 import { Image, ImageSourcePropType, TextInput, useWindowDimensions, View } from 'react-native';
 import ColorsPalette from '../../constants/ColorsPalette';
 import { style } from './CustomTextInput.style';
@@ -11,7 +11,7 @@ interface CustomTextInputProps {
     onChangeText: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const CustomTextInput: React.FC<CustomTextInputProps> = ({ testID, icon, placeholder, textValue, onChangeText, ...props }) => {
+const CustomTextInput: React.FC<CustomTextInputProps> = ({ testID, icon, placeholder, textValue, onChangeText }) => {
     const dimensions = useWindowDimensions();
     const styles = style(dimensions);
 

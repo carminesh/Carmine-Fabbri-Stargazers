@@ -2,7 +2,7 @@ import { View } from 'react-native';
 import React, { useMemo, useState } from 'react';
 import SearchSection from '../../components/SearchSection/SearchSection';
 import ListSection from '../../components/ListSection/ListSection';
-import ExplanotarySection from '../../components/ExplanotarySection/ExplanotarySection';
+import ExplanotarySection from '../../atoms/ExplanotarySection/ExplanotarySection';
 import { searchStarredUsers } from '../../assets/svg/searchStarredUsers';
 import { styles } from './InnerApp.style';
 

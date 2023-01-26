@@ -8,7 +8,7 @@ import { SEARCH_ICON, USER_ICON } from '../../assets/icons';
 import { REPO_ICON } from '../../assets/icons/index';
 import { useDispatch } from 'react-redux';
 import { setStargazers } from '../../store/slices/StargazersSlice';
-import { styles } from './SearchSection.list';
+import { styles } from './SearchSection.style';
 
 interface SearchSectionProps {
     setShowEplainer: React.Dispatch<React.SetStateAction<boolean>>;
@@ -33,7 +33,7 @@ const SearchSection: React.FC<SearchSectionProps> = ({ setShowEplainer, setIsLoa
 
             /* In this section, we correctly map the endpoint response */
             if (response) {
-                const mappedData: Stargazer[] = response.map((item: any) => ({
+                const mappedData: Stargazer[] = response.map((item: Stargazer) => ({
                     login: item.login,
                     id: item.id,
                     avatar_url: item.avatar_url,
@@ -43,8 +43,8 @@ const SearchSection: React.FC<SearchSectionProps> = ({ setShowEplainer, setIsLoa
                 /* here we set undefined when the user or the repo does not exist */
                 dispatch(setStargazers(response));
             }
-        } catch (e: unknown) {
-            console.error('Error: ', e);
+        } catch (error: unknown) {
+            console.error('Error: ', error);
         } finally {
             setIsLoading(false);
         }

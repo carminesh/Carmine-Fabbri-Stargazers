@@ -1,7 +1,7 @@
 import 'react-native';
 import React from 'react';
 import { render } from '@testing-library/react-native';
-import ExplanotarySection from '../src/components/ExplanotarySection/ExplanotarySection';
+import ExplanotarySection from '../src/atoms/ExplanotarySection/ExplanotarySection';
 import renderer from 'react-test-renderer';
 
 describe('ExplanotarySection testing', () => {
